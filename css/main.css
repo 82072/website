@@ -12,6 +12,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  color: #ffffff;
+  background-color: #0013FF;
+}
+
 html {
   background: #010111;
   background-size: cover;
