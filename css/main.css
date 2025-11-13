@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*outline: 1px dashed blue;*/
+}
+
+:root {
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: "Kode Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: #010111;
+  background-size: cover;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/space.jpg");
+  background-size: cover;
+}
+
+body {
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+}
+
+b,
+strong {
+  font-weight: 800;
+  color: inherit;
+}
+
+img {
+  height: auto;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+ul {
+  padding-inline-start: 20px
+}
+
+a {
+  color: inherit;
+}
+
+sup {
+  font-size: 50%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0013FF;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.global-container {
+  min-height: 100dvh; /* dynamic viewport height */
+  position: relative;
+}
+
+.container-fluid {
+  display: flex;
+  width: 100%;
+  min-height: 100dvh;
+  max-width: 64rem;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  z-index: 2;
+  position: relative;
+}
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 2rem 0;
+}
+
+.left-wrapper {
+  padding: 0;
+}
+
+.logo {
+  height: 2.5rem;
+  animation: 0.5s linear fadeIn;
+}
+
+.footer {
+  flex: 0;
+  padding: 4rem 0 1rem 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.copyright {
+  opacity: 0.2;
+  font-size: 0.8rem;
+}
+
+.btn {
+  background: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  color: #FDC772;
+  transition: all 0.15s;
+}
+
+a.btn,
+a.btn:link {
+  text-decoration: none;
+  text-shadow: none;
+  -webkit-tap-highlight-color: #ccc;
+}
+
+.btn-arrow:after {
+  content: "\0203A";
+  padding-left: 1rem;
+}
+
+.btn:hover {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.btn:active {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.tagline {
+  font-size: 2.5rem;
+  font-family: "Zalando Sans Expanded", sans-serif;
+  line-height: 1.2;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+  animation: 0.6s fadeInY;
+  color: #0013FF;
+  text-shadow: 0 0 0.5rem #0013FF;
+  animation: 5s glow infinite alternate;
+}
+
+.info {
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+  animation: 0.6s fadeInY;
+  font-weight: 400;
+  /*color: #0013FF;*/
+}
+
+.globe {
+  width: 25rem;
+  height: 25rem;
+  background-image: url("../images/globe-cropped.png");
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+}
+
+@media only screen and (min-width: 48em) {
+  .container-fluid {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .header {
+    padding: 2rem 0;
+  }
+
+  .logo {
+    height: 2.5rem;
+    animation: 0.5s linear fadeIn;
+  }
+
+  .about {
+    padding: 4rem 0;
+    height: 100%;
+  }
+
+  .intro {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .tagline {
+    font-size: 3rem;
+    margin-top: 0;
+  }
+
+  .footer {
+    padding: 0;
+  }
+
+  .globe {
+    width: 40rem;
+    height: 40rem;
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes fadeInY {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+@-webkit-keyframes fadeInX {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
