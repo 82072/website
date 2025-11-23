@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>82072 LABS&trade;</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Clementine Cleaning is a wellness-focused cleaning service currently serving Winnipeg, Steinbach, and Neepawa.">
+    <meta name="keywords" content="manitoba cleaners, green cleaners, winnipeg professional cleaners, manitoba professional cleaners, professional cleaners, winnipeg">
+
+    <meta property="og:description" content="Clementine Cleaning is a wellness-focused cleaning service currently serving Winnipeg, Steinbach, and Neepawa.">
+    <meta property="og:site_name" content="Clementine Cleaning">
+    <meta property="og:title" content="Clementine Cleaning &mdash; tidy home. tidy mind.&trade;">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clementinecleaning.ca">
+    <meta property="og:image" content="images/card@2x.png" />
+
+    <meta name="theme-color" content="#FDC772">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="images/icon-white.png">
+    <link rel="apple-touch-icon" href="images/icon-white.png" sizes="180x180">
+
+    <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/flexboxgrid.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="global-container">
+      <div class="container-fluid">
+        <header class="header row">
+          <a href="/"><img class="logo"  src="images/logo-full.png" /></a>
+        </header>
+
+        <section class="article row middle-xs between-xs">
+          <div class="left-wrapper col-xs-12 col-md-8 last-xs first-md">
+            <h2>Reverra: Redefining Digital Communication</h2>
+            Most communication apps today still feel like grids of faces and streams of audio. Even with high‑definition video and clear sound, something essential is missing: the sense of <i>being there</i>. Our brains are wired to process space, direction, and presence, but traditional calls flatten those dimensions into a two‑dimensional experience.
+            <br><br>
+            With <strong>Reverra</strong>, I set out to explore what happens when you bring those dimensions back.
+            <br><br>
+            <h3>Idea</h3>
+            What if a voice wasn’t just mixed into a stereo track, but instead lived in space? Imagine calling someone and hearing their voice anchored in front of you. As you turn your head, the soundscape shifts naturally, just as it would in real life.
+            <br><br>
+            Here’s where it becomes transformative: you can put your device down on a table, step back, and walk around the room — and the voice stays anchored. It doesn’t collapse into your headphones or follow you artificially. Instead, it feels like the person is <i>in the room with you</i>.
+            <br><br>
+            Think about a long‑distance relationship: instead of hearing your partner’s voice as a flat sound in your headphones, you hear them embodied in space, grounded and anchored, even as you move around. Their presence lingers, making distance feel smaller.
+            <br><br>
+            Or picture a live band performance streamed through Reverra. Instead of a compressed stereo mix, each instrument is placed around you — the guitar to your left, the drums behind you, the singer in front. You can set your device down, walk across the room, and the soundscape still shifts naturally with your head movements. Suddenly, you’re not just listening to music; you’re <i>inside the performance</i>.
+            <br><br>
+            That’s the promise of Reverra: spatial audio combined with AR to make communication and experiences feel alive again.
+            <br><br>
+            <h3>WebRTC</h3>
+            At the core of Reverra is WebRTC, the backbone of real‑time communication. It’s designed to minimize latency and maximize immediacy. Unlike standard transport models where data flows through centralized servers, WebRTC establishes <strong>peer‑to‑peer connections</strong> whenever possible.
+            <br><br>
+            This distinction matters. In a traditional client‑server setup, every packet of audio travels from your device to a server, then back out to the other participant. That round trip introduces delay, increases bandwidth costs, and can create bottlenecks. With WebRTC’s peer‑to‑peer transport, audio streams flow directly between devices, cutting down latency and making the experience feel more immediate.
+            <br><br>
+            For Reverra, that immediacy is critical. When you’re anchoring a voice in space, even a small delay can break the illusion. Peer‑to‑peer transport ensures that spatial metadata — the information about where the voice should be positioned — arrives in sync with the audio itself. The result is a smoother, more natural sense of presence.
+            <br><br>
+            <h3>Spatial Audio</h3>
+            Apple’s AirPods Pro and Max introduced head‑tracking sensors that feed orientation data in real time. By combining this with Apple’s PHASE audio engine, a single voice or instrument can be rendered as a true 3D audio source.
+            <br><br>
+            The effect is subtle but transformative. Instead of collapsing into a flat mix, the voice or performance feels embodied, reducing fatigue and making the experience more alive. Reverra makes it possible to move freely while still feeling connected to the person or performance.
+            <br><br>
+            <h3>Reality Kit</h3>
+            RealityKit provides the AR layer — anchoring the caller or performer in 3D space. It handles lighting, motion, and rendering, making it possible to place a marker, avatar, or even a stage in your environment.
+            <br><br>
+            On supported devices with LiDAR sensors, Reverra can go even further: scanning the room to understand its geometry. This allows voices or instruments to be anchored not just in abstract space, but relative to real surfaces — a voice at the edge of your desk, a guitar near the wall, or a drum kit positioned in the corner. Room geometry makes the experience more believable, because the audio feels tied to your actual environment.
+            <br><br>
+            To make this work seamlessly, I built a custom bridge for RealityKit. This bridge keeps native layers thin while exposing the necessary APIs for spatial audio and AR anchoring. It ensures transforms, orientation updates, and audio rendering stay tightly synchronized.
+            <br><br>
+            <em>Note: I initially explored React Viro for AR, but its abstractions introduced too much overhead and couldn’t deliver the performance required. RealityKit, combined with the custom bridge, gave Reverra the control and fidelity it needed.</em>
+            <br><br>
+            <h3>React Native</h3>
+            React Native ties everything together. It provides the UI layer and the bridge to native AR and audio frameworks. By keeping the native layers thin and exposing declarative APIs, Reverra remains flexible and composable. This makes it easier to iterate quickly, refine the experience, and keep the focus on presence rather than boilerplate.
+            <br><br>
+            <h3>The Future</h3>
+            Reverra is about reintroducing presence into digital communication. By combining WebRTC, spatial audio, AirPods head tracking, RealityKit (with a custom bridge), LiDAR‑based room geometry, and React Native, it demonstrates how voices and performances can feel embodied, contextual, and alive.
+            <br><br>
+            The most exciting part is what comes next. The same foundation that anchors a single voice in space today could evolve into persistent environments, immersive performances, or entirely new forms of interaction. As AR hardware matures and spatial audio becomes more widely adopted, Reverra is positioned to explore those frontiers.
+            <br><br>
+            The future of communication isn’t just about sharper video or faster connections. It’s about experiences that feel natural, spatial, and immersive. Reverra is a step toward that future — and the possibilities ahead are wide open.
+            <br><br><br>
+            <strong>Jaden Dessureault</strong>
+            <br>
+            <em>Founder, 82072 Labs&trade;</em>
+          </div>
+        </section>
+
+        <footer class="footer row">
+          <div class="copyright col-xs-12">Copyright &copy; 82072 Labs&trade;<br> All rights reserved.<br></div>
+        </footer>
+      </div>
+
+      <span class="overlay"></span>
+      <span class="globe"></span>
+    </div>
+  </body>
+</html>
