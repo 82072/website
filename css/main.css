@@ -106,6 +106,7 @@ ul {
 
 a {
   color: inherit;
+  cursor: pointer;
 }
 
 sup {
@@ -192,7 +193,7 @@ a.btn:link {
 
 .btn-arrow:after {
   content: "\0203A";
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   transition: all 0.2s;
 }
 
@@ -203,7 +204,7 @@ a.btn:link {
 }
 
 .btn:hover:after {
-  padding-left: 1.2rem;
+  padding-left: 0.8rem;
 }
 
 .btn:active {
@@ -247,6 +248,7 @@ a.btn:link {
   flex-direction: row;
   align-items: center;
   margin-bottom: 1rem;
+  margin-top: 3rem;
 }
 
 .reverra-wrapper .icon {
@@ -262,11 +264,23 @@ a.btn:link {
 
 .reverra-wrapper .btn {
   margin-top: 2rem;
+  animation: 0.6s fadeInY;
 }
 
 .about,
 .article {
   margin-top: 2rem;
+}
+
+.faces-image {
+  width: 100%;
+  display: block;
+  height: 8rem;
+  background-image: url("../images/faces-row-small.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: screen;
+  background-size: contain;
 }
 
 @media only screen and (min-width: 48em) {
@@ -304,6 +318,11 @@ a.btn:link {
     height: 40rem;
     opacity: 0.5;
     animation: 2s fadeInGlobe;
+  }
+
+  .faces-image {
+    height: 10rem;
+    background-image: url("../images/faces-row-full.png");
   }
 }
 

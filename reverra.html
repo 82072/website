@@ -39,55 +39,59 @@
         <section class="article row middle-xs between-xs">
           <div class="left-wrapper col-xs-12 col-md-8 last-xs first-md">
             <h2>Reverra: Redefining Digital Communication</h2>
-            Most communication apps today still feel like grids of faces and streams of audio. Even with high‑definition video and clear sound, something essential is missing: the sense of <i>being there</i>. Our brains are wired to process space, direction, and presence, but traditional calls flatten those dimensions into a two‑dimensional experience.
+            Most communication apps today feel flat. Even with high‑definition video and clear sound, something essential is missing: the sense of <i>being there</i>. Our brains are wired to process space, direction, and presence, but traditional calls flatten those dimensions into a one‑dimensional experience.
             <br><br>
             With <strong>Reverra</strong>, I set out to explore what happens when you bring those dimensions back.
+            <br><br><br>
+            <span class="faces-image"></span>
+            <br>
+            <h3>The Idea</h3>
+            What if a voice wasn’t just mixed into a stereo track, but instead lived in space? Imagine calling someone and hearing their voice anchored directly in front of you. As you turn your head, the soundscape shifts naturally, just as it would in real life.
             <br><br>
-            <h3>Idea</h3>
-            What if a voice wasn’t just mixed into a stereo track, but instead lived in space? Imagine calling someone and hearing their voice anchored in front of you. As you turn your head, the soundscape shifts naturally, just as it would in real life.
+            Here’s where it becomes transformative: you can put your device in your down, step back, and walk around the room — and the voice stays anchored. It doesn’t collapse into your headphones or follow you artificially. Instead, it feels like the person is in the room with you. Even more, Reverra lets you choose where that presence belongs. You can place the audio source anywhere in your environment — at the edge of your desk, near the window, or across the room — and it remains fixed to that location as you move.
             <br><br>
-            Here’s where it becomes transformative: you can put your device down on a table, step back, and walk around the room — and the voice stays anchored. It doesn’t collapse into your headphones or follow you artificially. Instead, it feels like the person is <i>in the room with you</i>.
+            Think about a long‑distance relationship. Instead of hearing your partner’s voice as a flat sound in your headphones, you hear them embodied in space, grounded and anchored, even as you move around. Their presence lingers, making distance feel smaller.
             <br><br>
-            Think about a long‑distance relationship: instead of hearing your partner’s voice as a flat sound in your headphones, you hear them embodied in space, grounded and anchored, even as you move around. Their presence lingers, making distance feel smaller.
-            <br><br>
-            Or picture a live band performance streamed through Reverra. Instead of a compressed stereo mix, each instrument is placed around you — the guitar to your left, the drums behind you, the singer in front. You can set your device down, walk across the room, and the soundscape still shifts naturally with your head movements. Suddenly, you’re not just listening to music; you’re <i>inside the performance</i>.
+            Or picture a live band performance streamed through Reverra. Instead of a compressed stereo mix, each instrument is positioned around you — the guitar to your left, the drums behind you, the singer in front. You can set your device down, walk across the room, and the soundscape still shifts naturally with your head movements. Suddenly, you’re not just listening to music; you’re inside the performance. Every listener’s experience is unique because each person can decide where the sound sources live in their own space.
             <br><br>
             That’s the promise of Reverra: spatial audio combined with AR to make communication and experiences feel alive again.
             <br><br>
             <h3>WebRTC</h3>
-            At the core of Reverra is WebRTC, the backbone of real‑time communication. It’s designed to minimize latency and maximize immediacy. Unlike standard transport models where data flows through centralized servers, WebRTC establishes <strong>peer‑to‑peer connections</strong> whenever possible.
+            At the core of Reverra is WebRTC, the backbone of real‑time communication. It minimizes latency by establishing peer‑to‑peer connections whenever possible, rather than routing audio through centralized servers. This direct transport cuts delay and makes conversations feel immediate.
             <br><br>
-            This distinction matters. In a traditional client‑server setup, every packet of audio travels from your device to a server, then back out to the other participant. That round trip introduces delay, increases bandwidth costs, and can create bottlenecks. With WebRTC’s peer‑to‑peer transport, audio streams flow directly between devices, cutting down latency and making the experience feel more immediate.
+            Equally important, WebRTC secures every stream with end‑to‑end encryption using DTLS‑SRTP. All streams and messages are protected from the moment they leave your device until they reach the other participant, ensuring privacy without sacrificing speed.
             <br><br>
-            For Reverra, that immediacy is critical. When you’re anchoring a voice in space, even a small delay can break the illusion. Peer‑to‑peer transport ensures that spatial metadata — the information about where the voice should be positioned — arrives in sync with the audio itself. The result is a smoother, more natural sense of presence.
+            For Reverra, that combination of immediacy and security is critical. The result is a smoother, more natural, and trustworthy sense of presence.
             <br><br>
             <h3>Spatial Audio</h3>
-            Apple’s AirPods Pro and Max introduced head‑tracking sensors that feed orientation data in real time. By combining this with Apple’s PHASE audio engine, a single voice or instrument can be rendered as a true 3D audio source.
+            Apple’s AirPods Pro and Max introduced head‑tracking sensors that feed orientation data in real time. By combining this with Apple’s Physical Audio Spatialization Engine (<a href="https://developer.apple.com/documentation/phase/">PHASE</a>), Reverra renders each voice or instrument as a true 3D audio source.
             <br><br>
-            The effect is subtle but transformative. Instead of collapsing into a flat mix, the voice or performance feels embodied, reducing fatigue and making the experience more alive. Reverra makes it possible to move freely while still feeling connected to the person or performance.
+            Beyond simple positioning, Reverra applies custom audio attenuation profiles that mimic how sound behaves in real environments. Voices can feel close and intimate, as though someone is speaking just a few feet away, or expansive and resonant, like standing inside a concert hall. The system dynamically adjusts volume, reverb, and spatial cues to match the context, making audio feel grounded in the space around you.
+            <br><br>
+            The effect is subtle but transformative. Instead of collapsing into a flat mix, the voice or performance feels embodied, reducing fatigue and making the experience more alive. Reverra makes it possible to move freely while still feeling connected to the person or performance, with sound that adapts naturally to your environment.
             <br><br>
             <h3>Reality Kit</h3>
-            RealityKit provides the AR layer — anchoring the caller or performer in 3D space. It handles lighting, motion, and rendering, making it possible to place a marker, avatar, or even a stage in your environment.
+            <a href="https://developer.apple.com/documentation/realitykit/">RealityKit</a> provides the AR layer — anchoring the caller or performer in 3D space. It handles lighting, motion, and rendering, making it possible to place a marker, avatar, or even a stage in your environment.
             <br><br>
             On supported devices with LiDAR sensors, Reverra can go even further: scanning the room to understand its geometry. This allows voices or instruments to be anchored not just in abstract space, but relative to real surfaces — a voice at the edge of your desk, a guitar near the wall, or a drum kit positioned in the corner. Room geometry makes the experience more believable, because the audio feels tied to your actual environment.
             <br><br>
             To make this work seamlessly, I built a custom bridge for RealityKit. This bridge keeps native layers thin while exposing the necessary APIs for spatial audio and AR anchoring. It ensures transforms, orientation updates, and audio rendering stay tightly synchronized.
             <br><br>
-            <em>Note: I initially explored React Viro for AR, but its abstractions introduced too much overhead and couldn’t deliver the performance required. RealityKit, combined with the custom bridge, gave Reverra the control and fidelity it needed.</em>
-            <br><br>
             <h3>React Native</h3>
             React Native ties everything together. It provides the UI layer and the bridge to native AR and audio frameworks. By keeping the native layers thin and exposing declarative APIs, Reverra remains flexible and composable. This makes it easier to iterate quickly, refine the experience, and keep the focus on presence rather than boilerplate.
             <br><br>
             <h3>The Future</h3>
-            Reverra is about reintroducing presence into digital communication. By combining WebRTC, spatial audio, AirPods head tracking, RealityKit (with a custom bridge), LiDAR‑based room geometry, and React Native, it demonstrates how voices and performances can feel embodied, contextual, and alive.
+            Reverra is about reintroducing presence into digital communication. By combining WebRTC, spatial audio, head tracking, RealityKit, LiDAR‑based room geometry, and React Native, it demonstrates how voices and performances can feel embodied, contextual, and alive.
             <br><br>
-            The most exciting part is what comes next. The same foundation that anchors a single voice in space today could evolve into persistent environments, immersive performances, or entirely new forms of interaction. As AR hardware matures and spatial audio becomes more widely adopted, Reverra is positioned to explore those frontiers.
+            The most exciting part is what comes next. This same foundation could evolve into persistent environments, immersive performances, or entirely new forms of interaction. As AR hardware matures and spatial audio becomes more widely adopted, Reverra is positioned to explore those frontiers.
             <br><br>
             The future of communication isn’t just about sharper video or faster connections. It’s about experiences that feel natural, spatial, and immersive. Reverra is a step toward that future — and the possibilities ahead are wide open.
+            <br><br>
+            Reverra will arrive to Earth in 2026.
             <br><br><br>
             <strong>Jaden Dessureault</strong>
             <br>
-            <em>Founder, 82072 Labs&trade;</em>
+            Founder, 82072 Labs&trade;
           </div>
         </section>
 
